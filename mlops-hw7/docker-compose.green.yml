@@ -1,0 +1,6 @@
+services:
+  ml-green:
+    build: .
+    image: ml:v1.1.0
+    environment: { MODEL_VERSION: v1.1.0 }
+    ports: ["8002:8000"]

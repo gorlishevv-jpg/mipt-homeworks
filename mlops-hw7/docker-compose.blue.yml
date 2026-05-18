@@ -1,0 +1,6 @@
+services:
+  ml-blue:
+    build: .
+    image: ml:v1.0.0
+    environment: { MODEL_VERSION: v1.0.0 }
+    ports: ["8001:8000"]

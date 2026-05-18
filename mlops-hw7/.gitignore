@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pip-cache/
+.venv/
+*.lock
+.DS_Store
+.ipynb_checkpoints/
+model.joblib
+metrics.json
+requirements.lock.txt
+python.version
+code.sha256

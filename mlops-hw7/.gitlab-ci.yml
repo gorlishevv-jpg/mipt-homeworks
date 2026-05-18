@@ -1,0 +1,8 @@
+build:
+  image: python:3.11-slim
+  script:
+    - pip install -r requirements.txt
+    - python ml_pipeline.py
+  after_script:
+    - echo "Make pipeline reproducible"
+    - pip freeze > requirements.lock.txt
