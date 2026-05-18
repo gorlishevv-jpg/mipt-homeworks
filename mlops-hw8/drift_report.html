@@ -1,0 +1,53 @@
+<html><head><meta charset='utf-8'><title>Drift report</title>
+<style>body{font-family:sans-serif;padding:20px} table{border-collapse:collapse} td,th{border:1px solid #ccc;padding:6px} .yes{background:#ffcccc}</style>
+</head><body>
+<h1>Data drift report (KS-test)</h1>
+<p>Reference: первые 75 строк iris. Current: остальные × 1000.</p>
+<table border="1" class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>ref_mean</th>
+      <th>cur_mean</th>
+      <th>ks_stat</th>
+      <th>p_value</th>
+      <th>drift</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sepal length (cm)</td>
+      <td>5.341</td>
+      <td>6345.333</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>sepal width (cm)</td>
+      <td>3.211</td>
+      <td>2904.000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>petal length (cm)</td>
+      <td>2.412</td>
+      <td>5104.000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>petal width (cm)</td>
+      <td>0.612</td>
+      <td>1786.667</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>YES</td>
+    </tr>
+  </tbody>
+</table>
+<p><b>Drift найден</b> там где p-value &lt; 0.05.</p>
+</body></html>

@@ -1,0 +1,9 @@
+digraph G {
+  rankdir=TB; node [shape=box, style=filled, fillcolor="#E8F4F8"];
+  ml [label="ML-сервис", fillcolor="#4A90E2", fontcolor=white];
+  subgraph cluster_b { label="Бизнес"; b1[label="Выручка"]; b2[label="Конверсия"]; b3[label="Удержание"]; }
+  subgraph cluster_a { label="Приложение"; a1[label="RPS"]; a2[label="p95 latency"]; a3[label="Error rate"]; }
+  subgraph cluster_m { label="ML"; m1[label="Accuracy"]; m2[label="Data drift"]; m3[label="Pred drift"]; }
+  subgraph cluster_i { label="Инфра"; i1[label="CPU"]; i2[label="RAM"]; i3[label="Disk"]; }
+  ml -> b1; ml -> a1; ml -> m1; ml -> i1;
+}

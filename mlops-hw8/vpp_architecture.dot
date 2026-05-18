@@ -1,0 +1,14 @@
+digraph G {
+  rankdir=LR; node [shape=box, style="filled,rounded", fillcolor="#E8F4F8"];
+  user [label="Зритель", fillcolor="#F5A623"];
+  subgraph cluster_in { label="Видео-стрим"; in_k [label="Kafka: frames", fillcolor="#231F20", fontcolor=white]; }
+  subgraph cluster_ml { label="ML pipeline (Kappa)";
+    det [label="YOLO\nдетект объектов"];
+    seg [label="Сегментация\nбрендов"];
+    gen [label="Diffusion\nвставка лого"];
+  }
+  subgraph cluster_out { label="Выход"; out_k [label="Kafka: out frames", fillcolor="#231F20", fontcolor=white]; cdn [label="CDN"]; }
+  prof [label="Профиль\nстраны", fillcolor="#7ED321"];
+  user -> in_k -> det -> seg -> gen -> out_k -> cdn -> user;
+  prof -> gen;
+}

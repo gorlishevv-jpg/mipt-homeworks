@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+prometheus-client
+evidently
+pandas
+numpy
+scikit-learn
+diagrams
